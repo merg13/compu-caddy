@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/compu-caddy/static/css/main.0877a4cc.css",
+    "main.js": "/compu-caddy/static/js/main.37a391ba.js",
+    "index.html": "/compu-caddy/index.html",
+    "main.0877a4cc.css.map": "/compu-caddy/static/css/main.0877a4cc.css.map",
+    "main.37a391ba.js.map": "/compu-caddy/static/js/main.37a391ba.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0877a4cc.css",
+    "static/js/main.37a391ba.js"
+  ]
+}
