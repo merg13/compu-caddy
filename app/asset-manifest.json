@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/compu-caddy/app/static/css/main.0877a4cc.css",
-    "main.js": "/compu-caddy/app/static/js/main.37a391ba.js",
+    "main.js": "/compu-caddy/app/static/js/main.54c4d261.js",
     "index.html": "/compu-caddy/app/index.html",
     "main.0877a4cc.css.map": "/compu-caddy/app/static/css/main.0877a4cc.css.map",
-    "main.37a391ba.js.map": "/compu-caddy/app/static/js/main.37a391ba.js.map"
+    "main.54c4d261.js.map": "/compu-caddy/app/static/js/main.54c4d261.js.map"
   },
   "entrypoints": [
     "static/css/main.0877a4cc.css",
-    "static/js/main.37a391ba.js"
+    "static/js/main.54c4d261.js"
   ]
 }
