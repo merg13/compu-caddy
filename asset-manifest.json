@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/compu-caddy/static/css/main.e6c13ad2.css",
-    "main.js": "/compu-caddy/static/js/main.ddb962a8.js",
+    "main.css": "/compu-caddy/static/css/main.0877a4cc.css",
+    "main.js": "/compu-caddy/static/js/main.3a230caf.js",
     "index.html": "/compu-caddy/index.html",
-    "main.e6c13ad2.css.map": "/compu-caddy/static/css/main.e6c13ad2.css.map",
-    "main.ddb962a8.js.map": "/compu-caddy/static/js/main.ddb962a8.js.map"
+    "main.0877a4cc.css.map": "/compu-caddy/static/css/main.0877a4cc.css.map",
+    "main.3a230caf.js.map": "/compu-caddy/static/js/main.3a230caf.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.ddb962a8.js"
+    "static/css/main.0877a4cc.css",
+    "static/js/main.3a230caf.js"
   ]
 }
