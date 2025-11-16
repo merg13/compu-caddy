@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { LineChart, Line, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, AreaChart, Area, ComposedChart } from 'recharts';
 import { Search, MapPin, Plus, Home, TrendingUp, Calendar, Award, Target, Menu, X, Download, Upload, Settings, Activity, ChevronLeft, ChevronRight, Save, Edit2, Trash2 } from 'lucide-react';
+import { PWAInstallBanner, OfflineIndicator, usePWAInstall } from './PWAComponents';
 
 // Service Worker Registration
 if ('serviceWorker' in navigator) {
@@ -559,6 +560,9 @@ export default function GolfStatsApp() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [notification, setNotification] = useState(null);
   const [showScorecard, setShowScorecard] = useState(false);
+
+  // PWA Install functionality
+  const { installApp, isInstallable } = usePWAInstall();
 
   const api = useMemo(() => new GolfCourseAPI(), []);
 

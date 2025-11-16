@@ -4,38 +4,90 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#2563eb" />
-    <meta name="description" content="Track and analyze your golf game" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/icons/icon-192.png" />
+    <meta name="theme-color" content="#10b981" />
+    <meta name="description" content="Compu-Caddy - Professional golf statistics tracking and analytics PWA with offline support" />
+    <meta name="keywords" content="golf, statistics, tracker, analytics, PWA, golf stats, compu-caddy" />
+    <meta name="author" content="Compu-Caddy" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://merg13.github.io/compu-caddy/" />
+    <meta property="og:title" content="Compu-Caddy - Golf Stats Tracker" />
+    <meta property="og:description" content="Professional golf statistics tracking and analytics PWA with offline support" />
+    <meta property="og:image" content="%PUBLIC_URL%/logo512.png" />
 
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://merg13.github.io/compu-caddy/" />
+    <meta property="twitter:title" content="Compu-Caddy - Golf Stats Tracker" />
+    <meta property="twitter:description" content="Professional golf statistics tracking and analytics PWA with offline support" />
+    <meta property="twitter:image" content="%PUBLIC_URL%/logo512.png" />
+    
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <title>Compu-Caddy - Golf Stats Tracker</title>
+    
+    <!-- PWA Install Prompt Script -->
+    <script>
+      let deferredPrompt;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        // Show install banner or button
+        const installBanner = document.getElementById('install-banner');
+        if (installBanner) {
+          installBanner.style.display = 'block';
+        }
+      });
+    </script>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>You need to enable JavaScript to run Compu-Caddy.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    
+    <!-- Install Banner (hidden by default) -->
+    <div id="install-banner" style="display: none; position: fixed; bottom: 20px; left: 20px; right: 20px; background: #10b981; color: white; padding: 16px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 1000;">
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <div>
+          <strong>Install Compu-Caddy</strong>
+          <div style="font-size: 14px; margin-top: 4px;">Get the full app experience with offline access</div>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <button onclick="installApp()" style="background: white; color: #10b981; border: none; padding: 8px 16px; border-radius: 4px; font-weight: bold; cursor: pointer;">Install</button>
+          <button onclick="dismissInstallBanner()" style="background: transparent; color: white; border: 1px solid white; padding: 8px 16px; border-radius: 4px; cursor: pointer;">Later</button>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      function installApp() {
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+              console.log('User accepted the install prompt');
+            }
+            deferredPrompt = null;
+            document.getElementById('install-banner').style.display = 'none';
+          });
+        }
+      }
+      
+      function dismissInstallBanner() {
+        document.getElementById('install-banner').style.display = 'none';
+        localStorage.setItem('install-banner-dismissed', 'true');
+      }
+      
+      // Don't show banner if user dismissed it
+      if (localStorage.getItem('install-banner-dismissed')) {
+        const banner = document.getElementById('install-banner');
+        if (banner) banner.style.display = 'none';
+      }
+    </script>
   </body>
 </html>

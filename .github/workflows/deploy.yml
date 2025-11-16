@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy Landing Page to GitHub Pages
 
 on:
   push:
@@ -16,14 +16,18 @@ jobs:
       with:
         node-version: '18'
         
-    - name: Install dependencies
+    - name: Install dependencies (for any Node.js build tools if needed)
       run: npm ci
       
-    - name: Build
-      run: npm run build
-      
-    - name: Deploy
+    - name: Build Landing Page
+      run: |
+        # Landing page is already built (static HTML/CSS/JS)
+        # Just copy it to the publish directory
+        mkdir -p publish
+        cp -r landing-site/* publish/
+        
+    - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build
+        publish_dir: ./publish
