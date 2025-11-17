@@ -99,13 +99,13 @@
       "url": "/?action=%s"
     }
   ],
-  "related_applications": [],
   "iarc_rating_id": "e10+",
   "widgets": [],
   "edge_side_panel": {
     "preferred_width": 400
   },
   "display_override": ["window-controls-overlay", "tabbed"],
-  "note_taking": {},
-  "scope_extensions": []
+  "note_taking": {
+    "new_note_url": "/?action=new-round"
+  }
 }
