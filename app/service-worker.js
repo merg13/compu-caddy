@@ -3,9 +3,9 @@
 
 const CACHE_NAME = 'golf-stats-v1';
 const urlsToCache = [
-  '/app/',
-  '/app/index.html',
-  '/app/manifest.json'
+  '/compu-caddy/app/',
+  '/compu-caddy/app/index.html',
+  '/compu-caddy/app/manifest.json'
 ];
 
 // Install event - cache all static assets
