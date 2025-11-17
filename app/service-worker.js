@@ -125,8 +125,31 @@ self.addEventListener('push', (event) => {
 // Handle notification clicks
 self.addEventListener('notificationclick', (event) => {
   event.notification.close();
-  
+
   event.waitUntil(
     clients.openWindow('/')
   );
+});
+
+// Periodic background sync for updating data
+self.addEventListener('periodicsync', (event) => {
+  console.log('Service Worker: Periodic sync', event.tag);
+
+  if (event.tag === 'update-golf-data') {
+    event.waitUntil(
+      // Add logic to fetch and cache updated golf data
+      // For example, fetch latest course information or stats
+      fetch('/api/golf-data')
+        .then(response => response.json())
+        .then(data => {
+          // Cache the data for offline use
+          return caches.open(CACHE_NAME).then(cache => {
+            return cache.put('/golf-data', new Response(JSON.stringify(data)));
+          });
+        })
+        .catch(error => {
+          console.log('Periodic sync failed:', error);
+        })
+    );
+  }
 });
