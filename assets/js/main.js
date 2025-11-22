@@ -227,6 +227,7 @@ function dismissInstallBanner() {
 
 // Open the main application
 function openApp() {
+    console.log('openApp called from landing page, current path:', window.location.pathname);
     // Track app launch event
     if (typeof gtag !== 'undefined') {
         gtag('event', 'app_launch', {
@@ -234,14 +235,16 @@ function openApp() {
             event_label: 'landing_page'
         });
     }
-    
+
     // Check if we should redirect to the actual app
     const currentPath = window.location.pathname;
     if (currentPath.includes('landing-site') || currentPath === '/' || currentPath === '') {
         // We're on the landing page, open the app in a new tab
+        console.log('Opening app at https://merg13.github.io/compu-caddy/app/');
         window.open('https://merg13.github.io/compu-caddy/app/', '_blank');
     } else {
         // We're already on the app
+        console.log('Redirecting to /');
         window.location.href = '/';
     }
 }
