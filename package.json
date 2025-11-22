@@ -12,17 +12,15 @@
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-is": "^19.2.0",
-    "react-scripts": "5.0.1",
     "recharts": "^3.4.1",
     "tesseract.js": "^6.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "deploy": "npm run build && rmdir /s /q publish && mkdir publish && xcopy landing-site publish /E /I /H /Y && mkdir publish\\app && xcopy build publish\\app /E /I /H /Y && gh-pages -d publish",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "vite",
+    "build": "vite build",
+    "test": "react-scripts test"
   },
   "browserslist": {
     "production": [
@@ -43,6 +41,9 @@
     "gh-pages": "^6.3.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.18",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vite": "^5.0.0",
+    "@vitejs/plugin-react": "^4.3.0",
+    "vite-plugin-pwa": "^0.20.5"
   }
 }

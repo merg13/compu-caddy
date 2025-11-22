@@ -27,7 +27,7 @@ jobs:
         mkdir -p publish
         cp -r landing-site/* publish/
         mkdir -p publish/app
-        cp -r build/* publish/app/
+        cp -r dist/* publish/app/
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
