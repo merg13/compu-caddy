@@ -23,13 +23,13 @@ export default defineConfig({
             type: "image/x-icon"
           },
           {
-            src: "logo192.png",
+            src: "manifest-icon-192.maskable.png",
             type: "image/png",
             sizes: "192x192",
             purpose: "any maskable"
           },
           {
-            src: "logo512.png",
+            src: "manifest-icon-512.maskable.png",
             type: "image/png",
             sizes: "512x512",
             purpose: "any maskable"
@@ -42,13 +42,13 @@ export default defineConfig({
         ],
         screenshots: [
           {
-            src: "logo512.png",
+            src: "manifest-icon-512.maskable.png",
             sizes: "512x512",
             type: "image/png",
             form_factor: "wide"
           },
           {
-            src: "logo192.png",
+            src: "manifest-icon-192.maskable.png",
             sizes: "192x192",
             type: "image/png",
             form_factor: "narrow"
@@ -75,7 +75,7 @@ export default defineConfig({
             url: "/?action=new-round",
             icons: [
               {
-                src: "logo192.png",
+                src: "manifest-icon-192.maskable.png",
                 sizes: "192x192"
               }
             ]
@@ -87,7 +87,7 @@ export default defineConfig({
             url: "/?action=dashboard",
             icons: [
               {
-                src: "logo192.png",
+                src: "manifest-icon-192.maskable.png",
                 sizes: "192x192"
               }
             ]
