@@ -218,7 +218,7 @@ export default function GolfStatsApp() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Activity className="text-blue-600" size={32} />
-              <h1 className="text-2xl font-bold text-gray-800">Golf Stats Tracker</h1>
+              <h1 className="text-2xl font-bold text-gray-800">CompuCaddy</h1>
             </div>
 
             {/* Mobile Menu Button */}
