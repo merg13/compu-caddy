@@ -1,9 +1,9 @@
 // Real Golf Course API service (GolfCourseAPI.com format)
 class GolfCourseAPI {
   constructor() {
-    // NOTE: API key can be set via REACT_APP_GOLF_API_KEY environment variable or user settings
+    // NOTE: API key can be set via VITE_GOLF_API_KEY environment variable or user settings
     this.baseUrl = 'https://api.golfcourseapi.com';
-    this.apiKey = process.env.REACT_APP_GOLF_API_KEY || localStorage.getItem('golfApiKey') || '';
+    this.apiKey = import.meta.env.VITE_GOLF_API_KEY || localStorage.getItem('golfApiKey') || '';
     this.useMockData = !this.apiKey; // Use mock data only if no API key is available
   }
 

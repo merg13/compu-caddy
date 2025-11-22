@@ -21,14 +21,16 @@ import { useStats } from './hooks/useStats';
 // Service Worker Registration
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/service-worker.js')
-      .then(reg => console.log('Service Worker registered'))
-      .catch(err => console.log('Service Worker registration failed'));
+    console.log('Attempting to register service worker at ./service-worker.js');
+    navigator.serviceWorker.register('./service-worker.js')
+      .then(reg => console.log('Service Worker registered successfully'))
+      .catch(err => console.log('Service Worker registration failed:', err));
   });
 }
 
 // Main App Component
 export default function GolfStatsApp() {
+  console.log('GolfStatsApp component rendered');
   const [currentView, setCurrentView] = useState<string>('dashboard');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [searchResults, setSearchResults] = useState<any[]>([]);
