@@ -194,30 +194,9 @@ function hideInstallBanner() {
 }
 
 function installPWA() {
-    if (window.deferredPrompt) {
-        window.deferredPrompt.prompt();
-        
-        window.deferredPrompt.userChoice.then((choiceResult) => {
-            if (choiceResult.outcome === 'accepted') {
-                console.log('User accepted the install prompt');
-                // Track installation event
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'pwa_install', {
-                        event_category: 'engagement',
-                        event_label: 'compu-caddy'
-                    });
-                }
-            } else {
-                console.log('User dismissed the install prompt');
-            }
-            
-            window.deferredPrompt = null;
-            hideInstallBanner();
-        });
-    } else {
-        // Fallback - open the app
-        openApp();
-    }
+    // Redirect to the app URL for installation
+    console.log('Redirecting to app URL for installation');
+    window.location.href = 'https://merg13.github.io/compu-caddy/app/';
 }
 
 function dismissInstallBanner() {
