@@ -1,4 +1,4 @@
-name: Deploy Landing Page to GitHub Pages
+name: Deploy Landing Page and PWA to GitHub Pages
 
 on:
   push:
@@ -7,25 +7,28 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v3
-    
+
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
         node-version: '18'
-        
-    - name: Install dependencies (for any Node.js build tools if needed)
+
+    - name: Install dependencies
       run: npm ci
-      
-    - name: Build Landing Page
+
+    - name: Build PWA
+      run: npm run build
+
+    - name: Prepare deploy directory
       run: |
-        # Landing page is already built (static HTML/CSS/JS)
-        # Just copy it to the publish directory
         mkdir -p publish
         cp -r landing-site/* publish/
-        
+        mkdir -p publish/app
+        cp -r build/* publish/app/
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:

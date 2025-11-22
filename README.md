@@ -1,4 +1,32 @@
-# Getting Started with Create React App
+# Compu-Caddy - Golf Statistics Tracker
+
+A Progressive Web App for tracking and analyzing your golf game with real course data integration.
+
+## Features
+
+- **Real Golf Course Data**: Powered by GolfCourseAPI.com with accurate course ratings, slope ratings, and hole-by-hole data
+- **Comprehensive Statistics**: Track scoring average, GIR, FIR, putting stats, and handicap calculations
+- **Offline Support**: Works completely offline with IndexedDB storage
+- **PWA Ready**: Install as a native app on mobile devices
+- **Advanced Analytics**: Strokes gained analysis, course performance tracking, and detailed hole-by-hole breakdowns
+
+## API Configuration
+
+This app uses the GolfCourseAPI.com service for real golf course data. You have two options to configure your API key:
+
+### Option 1: Environment Variable (Recommended for Development)
+1. Copy `.env.example` to `.env`
+2. Add your API key: `REACT_APP_GOLF_API_KEY=your_actual_api_key`
+3. Restart the development server
+
+### Option 2: In-App Configuration
+1. Open the app and go to Settings
+2. Enter your API key in the "API Key Configuration" section
+3. Click "Save Key"
+
+Get your API key at [GolfCourseAPI.com](https://golfcourseapi.com)
+
+## Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

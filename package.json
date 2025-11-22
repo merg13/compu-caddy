@@ -1,6 +1,6 @@
 {
   "name": "compu-caddy",
-  "homepage": "https://merg13.github.io/compu-caddy",
+  "homepage": "https://merg13.github.io/compu-caddy/app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,13 +11,14 @@
     "lucide-react": "^0.553.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-is": "^19.2.0",
     "react-scripts": "5.0.1",
     "recharts": "^3.4.1",
+    "tesseract.js": "^6.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "npm run build && rmdir /s /q publish && mkdir publish && xcopy landing-site publish /E /I /H /Y && mkdir publish\\app && xcopy build publish\\app /E /I /H /Y && gh-pages -d publish",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -36,9 +37,12 @@
     ]
   },
   "devDependencies": {
+    "@types/react": "^19.2.6",
+    "@types/react-dom": "^19.2.3",
     "autoprefixer": "^10.4.22",
     "gh-pages": "^6.3.0",
     "postcss": "^8.5.6",
-    "tailwindcss": "^3.4.18"
+    "tailwindcss": "^3.4.18",
+    "typescript": "^5.9.3"
   }
 }

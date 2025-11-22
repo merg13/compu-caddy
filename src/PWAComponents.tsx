@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { X } from 'lucide-react';
 
 // PWA Install Banner Component
-export function PWAInstallBanner({ onInstall, onDismiss }) {
+interface PWAInstallBannerProps {
+  onInstall: () => void;
+  onDismiss: () => void;
+}
+
+export function PWAInstallBanner({ onInstall, onDismiss }: PWAInstallBannerProps) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -92,7 +98,11 @@ export function OfflineIndicator() {
 }
 
 // PWA Update Notification Component
-export function PWAUpdateNotification({ onUpdate }) {
+interface PWAUpdateNotificationProps {
+  onUpdate: () => void;
+}
+
+export function PWAUpdateNotification({ onUpdate }: PWAUpdateNotificationProps) {
   const [showUpdate, setShowUpdate] = useState(false);
 
   useEffect(() => {
@@ -141,11 +151,11 @@ export function PWAUpdateNotification({ onUpdate }) {
 
 // PWA Install Hook
 export function usePWAInstall() {
-  const [deferredPrompt, setDeferredPrompt] = useState(null);
+  const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
   const [isInstallable, setIsInstallable] = useState(false);
 
   useEffect(() => {
-    const handleBeforeInstallPrompt = (e) => {
+    const handleBeforeInstallPrompt = (e: Event) => {
       e.preventDefault();
       setDeferredPrompt(e);
       setIsInstallable(true);
@@ -168,15 +178,15 @@ export function usePWAInstall() {
   const installApp = async () => {
     if (!deferredPrompt) return false;
 
-    deferredPrompt.prompt();
-    const { outcome } = await deferredPrompt.userChoice;
-    
+    (deferredPrompt as any).prompt();
+    const { outcome } = await (deferredPrompt as any).userChoice;
+
     if (outcome === 'accepted') {
       // Track successful installation
       console.log('PWA installed successfully');
       return true;
     }
-    
+
     return false;
   };
 
@@ -195,14 +205,16 @@ export function registerServiceWorker() {
           // Check for updates
           registration.addEventListener('updatefound', () => {
             const newWorker = registration.installing;
-            newWorker.addEventListener('statechange', () => {
-              if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                // New update available
-                navigator.serviceWorker.controller.postMessage({
-                  type: 'UPDATE_AVAILABLE'
-                });
-              }
-            });
+            if (newWorker) {
+              newWorker.addEventListener('statechange', () => {
+                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                  // New update available
+                  navigator.serviceWorker.controller.postMessage({
+                    type: 'UPDATE_AVAILABLE'
+                  });
+                }
+              });
+            }
           });
         })
         .catch((registrationError) => {
