@@ -80,7 +80,7 @@ function initScrollEffects() {
     }, observerOptions);
     
     // Observe elements for animation
-    const animatedElements = document.querySelectorAll('.feature-card, .download-card, .screenshot-card');
+    const animatedElements = document.querySelectorAll('.feature-card, .download-card, .screenshot-card, .metric-card');
     animatedElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';

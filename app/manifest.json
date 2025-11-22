@@ -20,6 +20,11 @@
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "any maskable"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
     }
   ],
   "screenshots": [
@@ -40,7 +45,7 @@
   "display": "standalone",
   "theme_color": "#10b981",
   "background_color": "#ffffff",
-  "orientation": "portrait-primary",
+  "orientation": "any",
   "categories": ["sports", "productivity", "utilities"],
   "lang": "en-US",
   "dir": "ltr",

@@ -428,6 +428,8 @@ body {
 .bg-orange-100 { background-color: #fed7aa; }
 .bg-teal-100 { background-color: #ccfbf1; }
 .bg-red-100 { background-color: #fee2e2; }
+.bg-indigo-100 { background-color: #e0e7ff; }
+.bg-yellow-100 { background-color: #fef3c7; }
 
 .feature-card h3 {
     font-size: 1.25rem;
@@ -437,6 +439,55 @@ body {
 }
 
 .feature-card p {
+    color: var(--gray-600);
+    line-height: 1.7;
+}
+
+/* Golf Metrics Section */
+.metrics {
+    padding: var(--section-padding);
+    background: white;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.metric-card {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--gray-200);
+    text-align: center;
+}
+
+.metric-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.metric-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.metric-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 1rem;
+}
+
+.metric-card p {
     color: var(--gray-600);
     line-height: 1.7;
 }
@@ -646,7 +697,8 @@ body {
     
     .features-grid,
     .download-grid,
-    .screenshots-grid {
+    .screenshots-grid,
+    .metrics-grid {
         grid-template-columns: 1fr;
     }
     
