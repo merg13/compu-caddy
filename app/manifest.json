@@ -5,37 +5,49 @@
   "description": "Professional golf statistics tracking and analytics PWA with offline support",
   "icons": [
     {
+      "src": "manifest-icon-192.maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "manifest-icon-192.maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "apple-touch-icon.png",
+      "src": "apple-icon-180.png",
       "sizes": "180x180",
       "type": "image/png"
     }
   ],
   "screenshots": [
     {
-      "src": "logo512.png",
+      "src": "manifest-icon-512.maskable.png",
       "sizes": "512x512",
       "type": "image/png",
       "form_factor": "wide"
     },
     {
-      "src": "logo192.png",
+      "src": "manifest-icon-192.maskable.png",
       "sizes": "192x192",
       "type": "image/png",
       "form_factor": "narrow"
@@ -46,7 +58,11 @@
   "theme_color": "#10b981",
   "background_color": "#ffffff",
   "orientation": "any",
-  "categories": ["sports", "productivity", "utilities"],
+  "categories": [
+    "sports",
+    "productivity",
+    "utilities"
+  ],
   "lang": "en-US",
   "dir": "ltr",
   "scope": "/compu-caddy/app",
@@ -62,7 +78,7 @@
       "url": "/?action=new-round",
       "icons": [
         {
-          "src": "logo192.png",
+          "src": "manifest-icon-192.maskable.png",
           "sizes": "192x192"
         }
       ]
@@ -74,7 +90,7 @@
       "url": "/?action=dashboard",
       "icons": [
         {
-          "src": "logo192.png",
+          "src": "manifest-icon-192.maskable.png",
           "sizes": "192x192"
         }
       ]
@@ -94,7 +110,9 @@
     {
       "action": "/",
       "accept": {
-        "application/json": [".json"]
+        "application/json": [
+          ".json"
+        ]
       }
     }
   ],
@@ -109,7 +127,10 @@
   "edge_side_panel": {
     "preferred_width": 400
   },
-  "display_override": ["window-controls-overlay", "tabbed"],
+  "display_override": [
+    "window-controls-overlay",
+    "tabbed"
+  ],
   "note_taking": {
     "new_note_url": "/?action=new-round"
   }
